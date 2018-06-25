@@ -23,7 +23,11 @@ export class LoginPage {
             .login(this.user)
             .subscribe(response => {
                 const token = response.json()['token'];
+                
                 localStorage.setItem('token', token);
+                localStorage.setItem('nickname', this.user.login);
+                localStorage.setItem('avatar_url', this.user.avatar);
+
                 this.navController.goToRoot({});
             }, error => {
                 console.error(error);

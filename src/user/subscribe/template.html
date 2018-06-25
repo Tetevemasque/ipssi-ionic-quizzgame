@@ -16,10 +16,11 @@
         <ion-label>Password</ion-label>
         <ion-input type="password" [(ngModel)]="user.password"></ion-input>
     </ion-item>
+    <ion-item>
+        <ion-label>Picture</ion-label>
+        <ion-input [(ngModel)]="user.avatar"></ion-input>
+    </ion-item>
     <div>
-        <button secondary ion-button>
-            Select a picture
-        </button>
         <button ion-button (click)="subscribe()">
             Subscribe
         </button>

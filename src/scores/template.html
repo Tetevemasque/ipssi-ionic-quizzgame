@@ -1,0 +1,23 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Scores</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <score-component *ngIf="score; else scoresList" [score]="score"></score-component>
+    <ng-template #scoresList>
+        <ion-list>
+            <ion-item *ngFor="let score of scores">
+                <score-component [score]="score" (click)="openScore(score)"></score-component>
+            </ion-item>
+        </ion-list>
+    </ng-template>
+
+    <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+    </button>
+</ion-content>

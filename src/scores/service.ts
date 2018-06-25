@@ -1,27 +1,29 @@
 import { Injectable } from "@angular/core";
-import { Message } from "./models";
-import messages from './mock'
+import { Score } from "./models";
+//import scores from './mock';
 import { HttpService } from "../shared/http.service";
 import { Subject } from "rxjs/Subject";
 
 @Injectable()
-export class MessagesService {
-    subject: Subject<Array<Message>> = new Subject();
+export class ScoresService {
+    subject: Subject<Array<Score>> = new Subject();
 
     constructor(public httpService: HttpService) {
+
     }
 
-    loadMessages() {
+    loadScores() {
         this
             .httpService
             .get()
             .subscribe(response => {
                 this.subject.next(response.json())
             },
-            error => this.subject.error(error.json()))
+            error => this.subject.error(error.json())
+        )
     }
 
-    addMessage(message: Message) {
-        // this.messages.push(message);
+    addScore(score: Score) {
+        // this.scores.push(score);
     }
 }

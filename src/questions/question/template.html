@@ -1,0 +1,18 @@
+<ion-card padding>
+    <ion-card-title>{{ question.question }}</ion-card-title>
+
+    <ion-card-content>
+
+            <ion-list id="{{ question.id }}" radio-group [(ngModel)]="relationship">
+
+                    <ion-item *ngFor="let reponse of question.reponses">
+                      <ion-label ng-if="reponse.length > 0">{{ reponse }}</ion-label>
+                      <ion-radio (click)="selecReponse(reponse)" ng-if="reponse.length > 0" value="{{ reponse }}"></ion-radio>
+                    </ion-item>
+
+                    <p>{{ question.id }}</p>
+
+                </ion-list>
+
+    </ion-card-content>
+</ion-card>

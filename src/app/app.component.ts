@@ -2,8 +2,8 @@ import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { Messages } from '../messages/component'
-import { PostMessage } from '../messages/post-message/component'
+import { Questions } from '../questions/component';
+import { Scores } from '../scores/component';
 import { SubscribePage } from '../user/subscribe/component';
 import { LoginPage } from '../user/login/component';
 
@@ -13,7 +13,7 @@ import { LoginPage } from '../user/login/component';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = Messages;
+  rootPage: any = Scores;
 
   pages: Array<{title: string, component: any}>;
 
@@ -23,8 +23,8 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Messages', component: Messages },
-      { title: 'Post Message', component: PostMessage },
+      { title: 'Play', component: Questions },
+      { title: 'Leader Board', component: Scores },
       { title: 'Subscribe', component: SubscribePage },
       { title: 'Login', component: LoginPage }
     ];

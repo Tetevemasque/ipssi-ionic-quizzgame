@@ -1,0 +1,6 @@
+<ion-card padding>
+        <ion-card-title>{{ score.nickname }}</ion-card-title>
+        <img class="avatar" *ngIf="score.avatar_url" [src]="score.avatar_url" />
+
+        <ion-card-content>Score : <b>{{ score.score }}</b></ion-card-content>
+    </ion-card>

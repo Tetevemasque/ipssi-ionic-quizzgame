@@ -5,7 +5,8 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { MessagesModule } from '../messages/module';
+import { QuestionsModule } from '../questions/module';
+import { ScoresModule } from '../scores/module';
 import { UserModule } from '../user/module';
 
 @NgModule({
@@ -15,7 +16,8 @@ import { UserModule } from '../user/module';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    MessagesModule,
+    QuestionsModule,
+    ScoresModule,
     UserModule
   ],
   bootstrap: [ IonicApp ],

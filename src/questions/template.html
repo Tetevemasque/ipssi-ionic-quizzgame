@@ -1,0 +1,36 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Questions</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <div class="params">
+        <ion-item>
+            <ion-label>Difficulté</ion-label>
+            <ion-select [(ngModel)]="difficulte">
+                <ion-option value="easy">Facile</ion-option>
+                <ion-option value="medium">Moyen</ion-option>
+                <ion-option value="hard">Difficile</ion-option>
+            </ion-select>
+        </ion-item>
+
+        <button ion-button (click)="initPartie()" color="secondary">Commencer</button>
+    </div>
+
+    <question-component *ngIf="question; else questionsList" [question]="question"></question-component>
+    <ng-template #questionsList>
+        <ion-list>
+            <ion-item *ngFor="let question of questions">
+                <question-component [question]="question"></question-component>
+            </ion-item>
+
+        </ion-list>
+    </ng-template>
+
+    <button ion-button (click)="finPartie()" color="secondary">Voir mon score</button>
+
+</ion-content>
