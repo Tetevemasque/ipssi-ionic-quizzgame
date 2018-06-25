@@ -1,0 +1,16 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Post a Message</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-item>
+        <ion-label floating>What's on your mind?</ion-label>
+        <ion-input [(ngModel)]="message.content"></ion-input>
+    </ion-item>
+    <button (click)="send()" ion-button>Send</button>
+</ion-content>

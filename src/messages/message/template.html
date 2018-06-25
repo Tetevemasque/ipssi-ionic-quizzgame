@@ -1,0 +1,7 @@
+    <ion-card padding>
+        <img class="message-avatar" [src]="message.author.avatar" />
+        <ion-card-title>@{{ message.author.login }}</ion-card-title>
+        <ion-card-content>{{ message.content }}</ion-card-content>
+        <img *ngIf="message.image" [src]="message.image" />
+        <i>{{ message.date | date:'dd/MM/yyyy HH:mm' }}</i>
+    </ion-card>
