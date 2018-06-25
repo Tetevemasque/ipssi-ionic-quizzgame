@@ -1,4 +1,6 @@
 # ipssi-ionic-quizzgame
+ESTÈVE YAHIA ET MEHDI BOUZIANE
+
 Projet de Quizz avec leader board pour le cours d'IONIC 
 
 INSTALLATION :
